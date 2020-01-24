@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recognition</title>
+    <script>
+        window.onload = function() {
+            navigator.getUserMedia =    (navigator.getUserMedia ||
+                            navigator.webkitGetUserMedia ||
+                            navigator.mozGetUserMedia || 
+                            navigator.msGetUserMedia)
+        }
+
+        var constraints = {
+            audio: false,
+            video: {
+                width: {exact: 512},
+                height: {exact: 512}
+            }
+        }
+        async function startVideo() {
+            if (navigator.getUserMedia) {
+            navigator.getUserMedia(
+                constraints,
+                function(localMediaStream) {
+                    var video = document.getElementById('Video')
+                    video.srcObject = localMediaStream
+                },
+                function(err) {
+                    console.log('The following error occurred when trying to use getUserMedia: ' + err);
+                }
+            )
+            } else {
+            alert('Sorry, your browser does not support getUserMedia');
+            }
+        }
+        startVideo()
+    </script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id='video-container'>
+        <video id='Video' autoplay muted width="512" height="512"></video>
+        <h3 id='prompt'>Please place your face in the frame</h3>
+    </div>
+    
+</body>
+</html>

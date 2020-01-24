@@ -1,0 +1,17 @@
+{
+  "name": "facex",
+  "version": "1.0.0",
+  "description": "make api calls to facex to create database and compare faces",
+  "main": "convert.js",
+  "scripts": {
+    "test": "c"
+  },
+  "author": "adam oh",
+  "license": "ISC",
+  "dependencies": {
+    "getusermedia": "^2.0.1",
+    "mathjs": "^6.5.0",
+    "polka": "^0.5.2",
+    "request": "^2.88.0"
+  }
+}
