@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Condensed&display=swap" rel="stylesheet" type="text/css">
     <title>Recognition</title>
     <script>
         window.onload = function() {
             navigator.getUserMedia =    (navigator.getUserMedia ||
                             navigator.webkitGetUserMedia ||
-                            navigator.mozGetUserMedia || 
+                            navigator.mozGetUserMedia ||
                             navigator.msGetUserMedia)
         }
 
@@ -38,15 +39,35 @@
         }
         startVideo()
     </script>
+
     <style>
-        
-    </style>
+	body {
+        font-family: 'Barlow Condensed', sans-serif;
+        color: #717D7E;
+        background-color: #594059;
+      }
+
+	h3 {
+        margin: 10px 0 30px 0;
+        letter-spacing: 4px;
+        font-size: 20px;
+        color: #566573;
+        border-radius: 15px;
+        border: 2px solid #F0F3F4;
+        border-width: thin;
+        width: 580px;
+        background: #FBF9FF;
+        border-color: #FBF9FF;
+      }
+
+</style>
+
 </head>
 <body>
-    <div id='video-container'>
+    <div align='center' id='video-container'>
         <video id='Video' autoplay muted width="512" height="512"></video>
-        <h3 id='prompt'>Please place your face in the frame</h3>
+        <h3 id='prompt'><center>Please place your face in the frame</center></h3>
     </div>
-    
+
 </body>
 </html>
